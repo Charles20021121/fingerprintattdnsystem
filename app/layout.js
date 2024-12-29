@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <script src="/registerSW.js" defer></script>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </head>
       <body className="bg-gray-100">
         <AuthWrapper>

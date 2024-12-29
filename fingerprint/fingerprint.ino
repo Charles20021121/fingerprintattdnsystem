@@ -8,7 +8,7 @@ const char* ssid = "Ck";
 const char* password = "12345678";
 
 // 創建指紋傳感器對象
-HardwareSerial mySerial(2);  // 使用 UART2
+HardwareSerial mySerial(2);
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 
 // 創建Web服務器，端口80
@@ -65,9 +65,9 @@ void setup() {
   // 設置CORS和API路由
   setupRoutes();
   
-  // 啟動服務器
+  // 啟動 HTTP 服務器
   server.begin();
-  Serial.println("HTTP服務器已啟動");
+  Serial.println("HTTP 服務器已啟動");
 }
 
 void loop() {
@@ -265,7 +265,7 @@ int getFreeID() {
 // 註冊新指紋
 int enrollFingerprint(int id) {
   int p = -1;
-  Serial.println("等待��效的指紋放置...");
+  Serial.println("等待有效的指紋放置...");
   
   // 第一次獲取指紋圖像
   while (p != FINGERPRINT_OK) {
